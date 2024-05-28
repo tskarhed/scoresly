@@ -1,0 +1,34 @@
+---
+layout: layouts/page.vto
+---
+Creators: {{tags}}
+
+{{ if composer}}
+Composer: {{composer}}
+{{ /if }}
+
+{{ if lyricist}}
+Lyricist: {{lyricist}}
+{{ /if }}
+
+{{ if arranger}}
+Arranger: {{arranger}}
+{{ /if }}
+
+
+<div id="osmdContainer"></div>
+<script src="https://github.com/opensheetmusicdisplay/opensheetmusicdisplay/releases/download/1.8.8/opensheetmusicdisplay.min.js"></script>
+<script>
+const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdContainer");
+osmd.setOptions({
+    backend: "svg",
+    drawTitle: false,
+    drawCredits: false,
+    scale: 0.8
+});
+
+osmd.load(`{{content}}`).then(function() {
+    osmd.render();
+});
+
+</script>
