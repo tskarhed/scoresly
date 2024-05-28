@@ -4,8 +4,7 @@
 Uses (Lume)[https://lume.land/] as a static site generator.
 
 ### Prerequisites
-- (Deno runtime)[https://deno.com/]
-
+- Install (Deno runtime)[https://deno.com/]: `curl -fsSL https://deno.land/install.sh | sh`
 **Run to develop**
 
 ```
