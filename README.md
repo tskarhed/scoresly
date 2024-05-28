@@ -1,7 +1,7 @@
 # Scoresly
 
 ## Develop
-Uses [Lume](https://lume.land/)as a static site generator.
+Uses [Lume](https://lume.land/) as a static site generator.
 
 ### Prerequisites
 - Install [Deno runtime](https://deno.com/): `curl -fsSL https://deno.land/install.sh | sh`
