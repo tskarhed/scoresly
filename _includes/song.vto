@@ -1,20 +1,26 @@
 ---
 layout: layouts/page.vto
 ---
-Creators: {{tags}}
 
-{{ if composer}}
-Composer: {{composer}}
-{{ /if }}
+<div class="post-credits">
+  <div class="left-credits">
+      {{ if lyricist}}
+      <div>Lyricist: {{lyricist}}</div>
+      {{ /if }}
+  </div>
 
-{{ if lyricist}}
-Lyricist: {{lyricist}}
-{{ /if }}
+  <div class="right-credits">
+    <div>Creators: {{tags}}</div>
 
-{{ if arranger}}
-Arranger: {{arranger}}
-{{ /if }}
+    {{ if composer}}
+    <div>Composer: {{composer}}</div>
+    {{ /if }}
 
+    {{ if arranger}}
+    <div>Arranger: {{arranger}}</div>
+    {{ /if }}
+  </div>
+</div>
 
 <div id="osmdContainer"></div>
 <script src="https://github.com/opensheetmusicdisplay/opensheetmusicdisplay/releases/download/1.8.8/opensheetmusicdisplay.min.js"></script>
@@ -32,3 +38,31 @@ osmd.load(`{{content}}`).then(function() {
 });
 
 </script>
+
+<style>
+.post-credits{
+  display: flex;
+  justify-content: space-between;
+}
+.left-credits{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: 7em;
+}
+.right-credits{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: right;
+  margin-right: 3em;
+}
+.post-title{
+  text-align: center;
+  font-size: 5em;
+  margin-bottom: 20px;
+}
+.body-tag{
+  max-width: 100%
+}
+</style>
