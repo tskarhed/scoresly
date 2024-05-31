@@ -22,19 +22,41 @@ layout: layouts/page.vto
   </div>
 </div>
 
-<div id="osmdContainer"></div>
+<div id="osmdContainer" ></div>
 <script src="https://github.com/opensheetmusicdisplay/opensheetmusicdisplay/releases/download/1.8.8/opensheetmusicdisplay.min.js"></script>
-<script>
-const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdContainer");
-osmd.setOptions({
-    backend: "svg",
-    drawTitle: false,
-    drawCredits: false,
-    scale: 0.8
-});
 
-osmd.load(`{{content}}`).then(function() {
-    osmd.render();
-});
+  <script>
+    function getScaleForScreenWidth() {
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 600) { // Adjust the breakpoint as needed
+        return 0.5; // Smaller scale for mobile devices
+      } else {
+        return 0.8; // Default scale for larger screens
+      }
+    }
 
-</script>
+    var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdContainer", {
+        backend: "svg",
+        pageFormat: "A4_P",  // A4 Portrait
+    });
+
+    osmd.setOptions({
+        backend: "svg",
+        drawTitle: false,
+        drawCredits: false,
+        drawPage: true,
+        scale: getScaleForScreenWidth()
+    });
+
+    osmd.load(`{{content}}`).then(function() {
+      osmd.render();
+    });
+
+    // Optional: Re-render on window resize to adjust the scale
+    window.addEventListener('resize', function() {
+      osmd.setOptions({
+        scale: getScaleForScreenWidth()
+      });
+      osmd.render();
+    });
+  </script>
