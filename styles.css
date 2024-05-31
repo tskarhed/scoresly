@@ -1,0 +1,25 @@
+.post-credits{
+  display: flex;
+  justify-content: space-between;
+}
+.left-credits{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: 7em;
+}
+.right-credits{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: right;
+  margin-right: 3em;
+}
+.post-title{
+  text-align: center;
+  font-size: 5em;
+  margin-bottom: 20px;
+}
+.body-tag{
+  max-width: 100%
+}

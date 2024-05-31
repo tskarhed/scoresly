@@ -8,6 +8,8 @@ const site = lume({
   },
 });
 
+site.loadAssets([".css"]);
+
 site.loadPages([".musicxml", ".mxl"], musicXMLLoader);
 
 site.use(blog());
