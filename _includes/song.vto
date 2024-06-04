@@ -35,15 +35,13 @@ layout: layouts/page.vto
     }
   }
 
-  var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdContainer", {
-      backend: "svg",
-      pageFormat: "A4_P",  // A4 Portrait
-  });
+  var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdContainer");
 
   osmd.setOptions({
       backend: "svg",
       drawTitle: false,
       drawCredits: false,
+      pageFormat: "A4_P",  // A4 Portrait
   });
 
   function renderMusic() {
