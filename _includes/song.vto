@@ -48,8 +48,16 @@ layout: layouts/page.vto
       drawCredits: false,
   });
 
-  osmd.load(`{{content}}`).then(function() {
-    osmd.Zoom = getScaleForScreenWidth()
+  function renderMusic() {
+    osmd.Zoom = getScaleForScreenWidth();
     osmd.render();
+  }
+
+  osmd.load(`{{content}}`).then(function() {
+    renderMusic();
+  });
+
+  window.addEventListener('resize', function() {
+    renderMusic();
   });
 </script>
