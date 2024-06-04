@@ -28,12 +28,10 @@ layout: layouts/page.vto
 <script>
   function getScaleForScreenWidth() {
     const screenWidth = window.innerWidth;
-    if (screenWidth < 600) {
-      return 0.5; // Smaller scale for mobile devices
-    } else if (screenWidth > 2400) {
-      return 2;   // Larger scale for very large screens
-    } else {      // Linnear interpolation betwen these points
-      return 0.5 + (screenWidth - 600) * (1.5 / 1800);
+    if (screenWidth > 2400) {
+      return 2
+    } else {
+      return 0.6 + (screenWidth - 600) * (1.5 / 1800);
     }
   }
 
