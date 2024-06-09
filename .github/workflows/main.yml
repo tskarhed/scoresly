@@ -5,7 +5,7 @@ on:
     branches: [ main, tskarhed/deploy-main ]
 
 env:
-  env_var: ${{vars.DEPLOY_URL}}
+  DEPLOY_URL: https://tskarhed.github.io/scoresly/
 
 permissions:
   contents: read
