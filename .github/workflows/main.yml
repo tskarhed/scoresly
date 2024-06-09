@@ -2,7 +2,7 @@ name: Publish on GitHub Pages
 
 on:
   push:
-    branches: [ main, tskarhed/deploy-main ]
+    branches: [ main ]
 
 env:
   DEPLOY_URL: https://tskarhed.github.io/scoresly/
