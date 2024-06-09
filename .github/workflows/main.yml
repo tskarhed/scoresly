@@ -4,6 +4,9 @@ on:
   push:
     branches: [ main, tskarhed/deploy-main ]
 
+env:
+  env_var: ${{vars.DEPLOY_URL}}
+
 permissions:
   contents: read
   pages: write
