@@ -6,6 +6,7 @@ const site = lume({
   server: {
     port: 8080,
   },
+  location: new URL(Deno.env.get("DEPLOY_URL")),
 });
 
 site.loadPages([".musicxml", ".mxl"], musicXMLLoader);
