@@ -1,37 +1,45 @@
 ---
 layout: layouts/page.vto
 ---
+<link rel="stylesheet" href="../scoresly.css">
+<div class="content">
+  <div class="post-credits">
+    <div class="left-credits">
+        {{ if lyricist}}
+        <div>Lyricist: {{lyricist}}</div>
+        {{ /if }}
+    </div>
 
-<div class="post-credits">
-  <div class="left-credits">
-      {{ if lyricist}}
-      <div>Lyricist: {{lyricist}}</div>
+
+    <div class="right-credits">
+      <div>Creators: {{tags}}</div>
+
+      {{ if composer}}
+      <div>Composer: {{composer}}</div>
       {{ /if }}
+
+      {{ if arranger}}
+      <div>Arranger: {{arranger}}</div>
+      {{ /if }}
+    </div>
   </div>
 
-  <div class="right-credits">
-    <div>Creators: {{tags}}</div>
-
-    {{ if composer}}
-    <div>Composer: {{composer}}</div>
-    {{ /if }}
-
-    {{ if arranger}}
-    <div>Arranger: {{arranger}}</div>
-    {{ /if }}
-  </div>
+  <div id="osmdContainer" ></div>
 </div>
-
-<div id="osmdContainer" ></div>
 <script src="https://github.com/opensheetmusicdisplay/opensheetmusicdisplay/releases/download/1.8.8/opensheetmusicdisplay.min.js"></script>
 
 <script>
   function getScaleForScreenWidth() {
     const screenWidth = window.innerWidth;
-    if (screenWidth > 2400) {
-      return 2
+    // if (screenWidth > 2400) {
+    //   return 2
+    // } else {
+    //   return 0.6 + (screenWidth - 600) * (1.4 / 1800);
+    // }
+    if (screenWidth < 800) {
+      return 0.6;
     } else {
-      return 0.6 + (screenWidth - 600) * (1.4 / 1800);
+      return 1.5;
     }
   }
 
