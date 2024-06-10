@@ -10,8 +10,7 @@
 .post-credits {
   display: flex;
   justify-content: space-between;
-  font-size: 1rem;
-  width: 93%;
+  text-wrap: wrap;
 }
 
 .left-credits, .right-credits {
@@ -22,11 +21,11 @@
 }
 
 .right-credits {
-  align-items: flex-end;
+  text-align: end;
 }
 
 .left-credits{
-  padding-left: 4rem;
+  width: 50vw;
 }
 
 .post-title {
@@ -54,11 +53,38 @@
   width: 100%;
 }
 
-svg {
-  width: 100%;
-  height: auto;
-}
-
 .body-tag {
   max-width: 100%;
+}
+
+@media (max-width: 800px) {
+  .post-credits {
+    font-size: 0.6rem;
+  }
+}
+@media (min-width: 801px) and (max-width: 1200px) {
+  .post-credits {
+    font-size: 0.75rem;
+  }
+  .left-credits{
+    padding-left: 3rem;
+  }
+
+  .post-credits {
+    width: 93%;
+  }
+}
+
+
+@media (min-width: 1201px){
+  .post-credits {
+    font-size: 1rem;
+  }
+  .left-credits{
+    padding-left: 4rem;
+  }
+
+  .post-credits {
+    width: 93%;
+  }
 }
