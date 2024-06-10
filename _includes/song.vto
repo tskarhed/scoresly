@@ -30,16 +30,10 @@ layout: layouts/page.vto
 
 <script>
   function getScaleForScreenWidth() {
-    const screenWidth = window.innerWidth;
-    // if (screenWidth > 2400) {
-    //   return 2
-    // } else {
-    //   return 0.6 + (screenWidth - 600) * (1.4 / 1800);
-    // }
-    if (screenWidth < 800) {
+    if (window.innerWidth < 800) {
       return 0.6;
     } else {
-      return 1.5;
+      return 1;
     }
   }
 
