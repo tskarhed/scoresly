@@ -10,7 +10,7 @@ extra_head: []
 metas:
   site: Blog name
   description: General description of the blog
-  title: "=title"
+  title: "Scoresly"
   image: "=image"
   twitter: "@username"
   lang: en

@@ -1,12 +1,10 @@
 ---
 layout: layouts/page.vto
-category: ''
-url: ./
-title: Songs
 ---
 
+<h1> {{ metas.title }} </h1>
 <ul data-pagefind-ignore>
-<div class="search" id="search"></div>
+<div class="search" id="search" ></div>
   {{ for page of search.pages("category=songs") }}
   <li><a href="{{ page.url }}">{{ page.title }}</a></li>
   {{ /for }}

@@ -9,6 +9,8 @@ const site = lume({
   location: new URL(Deno.env.get("DEPLOY_URL")),
 });
 
+site.copy("scoresly.css");
+
 site.loadPages([".musicxml", ".mxl"], musicXMLLoader);
 
 site.use(blog());

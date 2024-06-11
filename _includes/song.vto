@@ -1,34 +1,64 @@
 ---
 layout: layouts/page.vto
 ---
-Creators: {{tags}}
-
-{{ if composer}}
-Composer: {{composer}}
-{{ /if }}
-
-{{ if lyricist}}
-Lyricist: {{lyricist}}
-{{ /if }}
-
-{{ if arranger}}
-Arranger: {{arranger}}
-{{ /if }}
+<link rel="stylesheet" href="../scoresly.css">
+<div class="content">
+  <div class="post-credits">
+    <div class="left-credits">
+        {{ if lyricist}}
+        <div>Lyricist: {{lyricist}}</div>
+        {{ /if }}
+    </div>
 
 
-<div id="osmdContainer"></div>
+    <div class="right-credits">
+      <div>Creators: {{tags}}</div>
+
+      {{ if composer}}
+      <div>Composer: {{composer}}</div>
+      {{ /if }}
+
+      {{ if arranger}}
+      <div>Arranger: {{arranger}}</div>
+      {{ /if }}
+    </div>
+  </div>
+
+  <div id="osmdContainer" ></div>
+</div>
 <script src="https://github.com/opensheetmusicdisplay/opensheetmusicdisplay/releases/download/1.8.8/opensheetmusicdisplay.min.js"></script>
+
 <script>
-const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdContainer");
-osmd.setOptions({
-    backend: "svg",
-    drawTitle: false,
-    drawCredits: false,
-    scale: 0.8
-});
+  function getScaleForScreenWidth() {
+    const windowSize = window.innerWidth;
+    if (windowSize < 800) {
+      return 0.55;
+    } else if (windowSize < 1200) {
+      return 0.75
+    }else {
+      return 1;
+    }
+  }
 
-osmd.load(`{{content}}`).then(function() {
+  var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdContainer");
+
+  osmd.setOptions({
+      backend: "svg",
+      drawTitle: false,
+      drawCredits: false,
+      pageFormat: "A4_P",  // A4 Portrait
+  });
+
+  function renderMusic() {
+    osmd.Zoom = getScaleForScreenWidth();
     osmd.render();
-});
+  }
 
+  osmd.load(`{{content}}`).then(function() {
+    renderMusic();
+  });
+
+  window.addEventListener('resize', function() {
+    renderMusic();
+  });
 </script>
