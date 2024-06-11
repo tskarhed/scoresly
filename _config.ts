@@ -6,10 +6,11 @@ const site = lume({
   server: {
     port: 8080,
   },
-  location: new URL(Deno.env.get("DEPLOY_URL")),
+  location: new URL(Deno.env.get("DEPLOY_URL", "http://localhost:8080")),
 });
 
 site.copy("scoresly.css");
+site.copy("assets/graphics/Cleff_Bass.svg");
 
 site.loadPages([".musicxml", ".mxl"], musicXMLLoader);
 

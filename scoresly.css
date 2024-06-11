@@ -30,7 +30,7 @@
 .post-title {
   text-align: center;
   font-size: 3rem;
-  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 
 .post-body{
@@ -54,6 +54,27 @@
 
 .body-tag {
   max-width: 100%;
+}
+
+#loadingSheet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  height: 50vh;
+}
+@keyframes oscillateAnimation {
+  0%, 100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+#loadingImage {
+  width: 10rem;
+  animation: oscillateAnimation 2s ease-in-out infinite;
 }
 
 @media (max-width: 800px) {
