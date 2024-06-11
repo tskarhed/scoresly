@@ -6,20 +6,20 @@ layout: layouts/page.vto
   <div class="post-credits">
     <div class="left-credits">
         {{ if lyricist}}
-        <div>Lyricist: {{lyricist}}</div>
+        <div>Words by {{lyricist}}</div>
         {{ /if }}
     </div>
 
 
     <div class="right-credits">
-      <div>Creators: {{tags}}</div>
+      <div>Music by {{tags}}</div>
 
       {{ if composer}}
-      <div>Composer: {{composer}}</div>
+      <div>Composed by {{composer}}</div>
       {{ /if }}
 
       {{ if arranger}}
-      <div>Arranger: {{arranger}}</div>
+      <div>Arr. by {{arranger}}</div>
       {{ /if }}
     </div>
   </div>
