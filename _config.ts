@@ -6,7 +6,7 @@ const site = lume({
   server: {
     port: 8080,
   },
-  location: new URL(Deno.env.get("DEPLOY_URL", "http://localhost:8080")),
+  location: new URL(Deno.env.get("DEPLOY_URL")),
 });
 
 site.copy("scoresly.css");
