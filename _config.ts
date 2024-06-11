@@ -8,7 +8,7 @@ const site = lume({
   },
 });
 
-site.copy("scoresly");
+site.copy("scoresly.css");
 
 site.loadPages([".musicxml", ".mxl"], musicXMLLoader);
 
