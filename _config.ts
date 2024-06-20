@@ -9,6 +9,7 @@ const site = lume({
 });
 
 site.copy("scoresly.css");
+site.copy("assets/graphics/Cleff_Bass.svg");
 
 site.loadPages([".musicxml", ".mxl"], musicXMLLoader);
 

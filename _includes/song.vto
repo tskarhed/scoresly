@@ -24,7 +24,12 @@ layout: layouts/page.vto
     </div>
   </div>
 
-  <div id="osmdContainer" ></div>
+  <div id="loadingSheet">
+    <img id="loadingImage" src = "/assets/graphics/Cleff_Bass.svg"/>
+    Loading sheet music...
+  </div>
+
+  <div id="osmdContainer"></div>
 </div>
 <script src="https://github.com/opensheetmusicdisplay/opensheetmusicdisplay/releases/download/1.8.8/opensheetmusicdisplay.min.js"></script>
 
@@ -56,6 +61,10 @@ layout: layouts/page.vto
 
   osmd.load(`{{content}}`).then(function() {
     renderMusic();
+    var loadingSheet = document.getElementById("loadingSheet");
+    if (loadingSheet) {
+      loadingSheet.remove();
+    }
   });
 
   window.addEventListener('resize', function() {
