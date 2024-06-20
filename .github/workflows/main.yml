@@ -26,7 +26,7 @@ jobs:
           deno-version: v1.x
 
       - name: Build site
-        run: deno task build
+        run: deno task build --location=https://tskarhed.github.io/scoresly/
       
       - name: Setup Pages
         uses: actions/configure-pages@v3
